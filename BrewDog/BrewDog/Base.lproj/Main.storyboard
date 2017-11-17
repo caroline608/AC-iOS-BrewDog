@@ -1,28 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XvO-fJ-6Tz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TuS-1c-1SG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Beer List -->
         <scene sceneID="jxr-4L-f8P">
             <objects>
-                <viewController id="XvO-fJ-6Tz" sceneMemberID="viewController">
+                <viewController id="XvO-fJ-6Tz" customClass="BeerListViewController" customModule="BrewDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6vz-xA-Nud">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3iF-NM-eu1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Beer cell" textLabel="uSD-b9-6WP" detailTextLabel="Scv-21-c0Q" imageView="yt5-H8-PGE" style="IBUITableViewCellStyleSubtitle" id="nTo-wm-ejm">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nTo-wm-ejm" id="8vY-Xe-Ngn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uSD-b9-6WP">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Scv-21-c0Q">
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yt5-H8-PGE">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="2YY-HT-Iw6" kind="show" identifier="beerDetailSegue" id="bsd-Gy-Y6O"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3iF-NM-eu1" firstAttribute="top" secondItem="Fsk-qk-1Kx" secondAttribute="top" id="2m8-G0-vVf"/>
+                            <constraint firstItem="Fsk-qk-1Kx" firstAttribute="bottom" secondItem="3iF-NM-eu1" secondAttribute="bottom" id="4vV-ZC-8p2"/>
+                            <constraint firstItem="Fsk-qk-1Kx" firstAttribute="trailing" secondItem="3iF-NM-eu1" secondAttribute="trailing" id="QB9-92-vpN"/>
+                            <constraint firstItem="3iF-NM-eu1" firstAttribute="leading" secondItem="Fsk-qk-1Kx" secondAttribute="leading" id="Uyb-E0-Q0y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Fsk-qk-1Kx"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Beer List " id="LAk-EQ-ndv">
+                        <barButtonItem key="backBarButtonItem" title="All Beer" id="XXl-Lt-0oT"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="3iF-NM-eu1" id="7zu-1c-OZc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1P1-aP-orF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="320" y="-177"/>
+            <point key="canvasLocation" x="751" y="-144"/>
+        </scene>
+        <!--Beer Detail View Controller-->
+        <scene sceneID="3SE-0B-qHT">
+            <objects>
+                <viewController id="2YY-HT-Iw6" customClass="BeerDetailViewController" customModule="BrewDog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ipU-l2-tr7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dfg-0D-VLk">
+                                <rect key="frame" x="93.5" y="64" width="187.5" height="333.5"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mLk-Yr-KXD">
+                                <rect key="frame" x="11" y="440.5" width="353" height="215.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQv-c8-Ixp">
+                                <rect key="frame" x="11" y="408.5" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dfg-0D-VLk" firstAttribute="centerX" secondItem="2xc-TD-qd7" secondAttribute="centerX" id="20C-fF-hga"/>
+                            <constraint firstItem="BQv-c8-Ixp" firstAttribute="top" secondItem="dfg-0D-VLk" secondAttribute="bottom" constant="11" id="6Lx-tj-goY"/>
+                            <constraint firstItem="mLk-Yr-KXD" firstAttribute="leading" secondItem="2xc-TD-qd7" secondAttribute="leading" constant="11" id="Be5-xM-6kA"/>
+                            <constraint firstItem="BQv-c8-Ixp" firstAttribute="leading" secondItem="2xc-TD-qd7" secondAttribute="leading" constant="11" id="Cag-wk-yH2"/>
+                            <constraint firstItem="2xc-TD-qd7" firstAttribute="trailing" secondItem="mLk-Yr-KXD" secondAttribute="trailing" constant="11" id="JgZ-F0-EMy"/>
+                            <constraint firstItem="dfg-0D-VLk" firstAttribute="height" secondItem="ipU-l2-tr7" secondAttribute="height" multiplier="0.5" id="Ki9-pG-Smm"/>
+                            <constraint firstItem="dfg-0D-VLk" firstAttribute="top" secondItem="2xc-TD-qd7" secondAttribute="top" id="Rv6-3s-95H"/>
+                            <constraint firstItem="dfg-0D-VLk" firstAttribute="width" secondItem="ipU-l2-tr7" secondAttribute="width" multiplier="0.5" id="bDY-HM-TC3"/>
+                            <constraint firstItem="2xc-TD-qd7" firstAttribute="trailing" secondItem="BQv-c8-Ixp" secondAttribute="trailing" constant="11" id="gyq-qf-KCk"/>
+                            <constraint firstItem="mLk-Yr-KXD" firstAttribute="top" secondItem="BQv-c8-Ixp" secondAttribute="bottom" constant="11" id="z0Q-CI-euv"/>
+                            <constraint firstItem="2xc-TD-qd7" firstAttribute="bottom" secondItem="mLk-Yr-KXD" secondAttribute="bottom" constant="11" id="zt2-m3-j2C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2xc-TD-qd7"/>
+                    </view>
+                    <connections>
+                        <outlet property="beerImageView" destination="dfg-0D-VLk" id="xi3-Lk-L67"/>
+                        <outlet property="descriptionLabel" destination="mLk-Yr-KXD" id="Mx5-BE-1cT"/>
+                        <outlet property="taglineLabel" destination="BQv-c8-Ixp" id="6um-rb-isY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFc-eI-51M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782" y="-144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0b3-7B-nlY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TuS-1c-1SG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TXM-7h-g28">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XvO-fJ-6Tz" kind="relationship" relationship="rootViewController" id="smQ-2u-Tug"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJF-5K-ejf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-370" y="-144"/>
         </scene>
     </scenes>
 </document>
